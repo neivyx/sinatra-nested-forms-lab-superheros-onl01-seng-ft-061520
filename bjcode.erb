@@ -1,0 +1,76 @@
+Code snippet
+<form action='/team' method='POST' >
+<h1>Create a Team and Heroes!</h1>
+<label>Team Name:</label>
+<input type='text' id='team_name' name='team[name]'>
+<label>Motto:</label>
+<input type='text' id='motto' name='team[motto]'>
+​
+<h1>Who is Your Superhero?</h1>
+<br>
+<h3>Hero 1</h3>
+<label for='superhero_name'>Name:</label>
+<input type='text' id='superhero_name' name='team[superhero][][name]'>
+<br>
+<label for='superhero_power'>Power:</label>
+<input type='text' id='superhero_power' name='team[superhero][][power]'>
+><br><br>
+<br>
+<label for='superhero_bio'>Bio:</label>
+<input type='text' id='superhero_bio' name='team[superhero][][bio]'>
+<br><br>
+​
+<h3>Hero 2</h3>
+<label for='superhero_name'>Name:</label>
+<input type='text' id='superhero_name2' name='team[superhero][][name]'>
+<br>
+<label for='superhero_power'>Power:</label>
+<input type='text' id='superhero_power2' name='team[superhero][][power]'>
+><br><br>
+<br>
+<label for='superhero_bio'>Bio:</label>
+<input type='text' id='superhero_bio2' name='team[superhero][][bio]'>
+<br><br>
+​
+<h3>Hero 3</h3>
+<label for='superhero_name'>Name:</label>
+<input type='text' id='superhero_name3' name='team[superhero][][name]'>
+<br>
+<label for='superhero_power'>Power:</label>
+<input type='text' id='superhero_power3' name='team[superhero][][power]'>
+><br><br>
+<br>
+<label for='superhero_bio'>Bio:</label>
+<input type='text' id='superhero_bio3' name='team[superhero][][bio]'>
+<br><br>
+<input type='submit'>
+</form>
+
+
+
+
+
+
+----
+
+
+Failures:
+​
+  1) App POST /teams submits the form
+     Failure/Error: fill_in("member1_name", :with => "Amanda")
+     Capybara::ElementNotFound:
+       Unable to find field "member1_name"
+     # /Users/fieldoflilley/.rvm/gems/ruby-2.6.1/gems/capybara-2.5.0/lib/capybara/node/finders.rb:43:in `block in find'
+     # /Users/fieldoflilley/.rvm/gems/ruby-2.6.1/gems/capybara-2.5.0/lib/capybara/node/base.rb:84:in `synchronize'
+     # /Users/fieldoflilley/.rvm/gems/ruby-2.6.1/gems/capybara-2.5.0/lib/capybara/node/finders.rb:32:in `find'
+     # /Users/fieldoflilley/.rvm/gems/ruby-2.6.1/gems/capybara-2.5.0/lib/capybara/node/actions.rb:58:in `fill_in'
+     # /Users/fieldoflilley/.rvm/gems/ruby-2.6.1/gems/capybara-2.5.0/lib/capybara/session.rb:698:in `block (2 levels) in <class:Session>'
+     # /Users/fieldoflilley/.rvm/gems/ruby-2.6.1/gems/capybara-2.5.0/lib/capybara/dsl.rb:51:in `block (2 levels) in <module:DSL>'
+     # ./spec/super_sinatra_forms_spec.rb:23:in `block (3 levels) in <top (required)>'
+​
+Finished in 0.03382 seconds (files took 0.61674 seconds to load)
+3 examples, 1 failure
+​
+Failed examples:
+​
+rspec ./spec/super_sinatra_forms_spec.rb:19 # App POST /teams submits the form
